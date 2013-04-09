@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'utopia/tags/google/analytics/version'
+require 'utopia/tags/google-analytics/version'
 
 Gem::Specification.new do |spec|
 	spec.name          = "utopia-tags-google-analytics"
-	spec.version       = Utopia::Tags::Google::Analytics::VERSION
+	spec.version       = Utopia::Tags::GoogleAnalytics::VERSION
 	spec.authors       = ["Samuel Williams"]
 	spec.email         = ["samuel.williams@oriontransfer.co.nz"]
 	spec.description   = <<-EOF
