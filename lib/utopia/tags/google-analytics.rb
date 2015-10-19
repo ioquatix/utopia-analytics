@@ -18,6 +18,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
+require 'json'
+
 module Utopia
 	module Tags
 		module GoogleAnalytics
@@ -31,7 +33,7 @@ module Utopia
 							m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 						})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 							
-						ga('create', #{Trenni::Strings.to_quoted_string(id)}, 'auto');
+						ga('create', #{JSON.dump(id)}, 'auto');
 						ga('send', 'pageview');
 					</script>
 				EOF
