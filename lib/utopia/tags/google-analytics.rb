@@ -24,7 +24,7 @@ module Utopia
 	module Tags
 		module GoogleAnalytics
 			def self.call(transaction, state)
-				id = state['id']
+				id = state[:id]
 				
 				html = <<-EOF
 					<script>
