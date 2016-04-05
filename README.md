@@ -20,12 +20,19 @@ Or install it yourself as:
 
 ## Usage
 
-First make sure to add the `<google-analytics>` tag to `Utopia::Content` in your rackup file:
+First make sure to add the `<google-analytics>` tag to `Utopia::Content` in your rackup file along with all the other tags you
+wish to use:
+
 ```ruby
+require 'utopia/tags/google-analytics'
+
+...
+
 use Utopia::Content,
 	tags: {
 		...
-		'google-analytics' => Utopia::Tags::GoogleAnalytics
+		'google-analytics' => Utopia::Tags::GoogleAnalytics,
+		...
 	}
 ```
 
