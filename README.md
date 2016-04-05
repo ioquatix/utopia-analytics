@@ -20,7 +20,16 @@ Or install it yourself as:
 
 ## Usage
 
-You might want to combine this tag with the `<env>` tag to ensure that Google Analytics is only tracked in production. Simply set the `id` attribute to whatever you have been provided by Google Analytics:
+First make sure to add the `<google-analytics>` tag to `Utopia::Content` in your rackup file:
+```ruby
+use Utopia::Content,
+	tags: {
+		...
+		'google-analytics' => Utopia::Tags::GoogleAnalytics
+	}
+```
+
+You might want to combine this tag with the `<environment>` tag to ensure that Google Analytics is only tracked in production. Simply set the `id` attribute to whatever you have been provided by Google Analytics:
 
 	<env only="production">
 		<google-analytics id="UA-XXXXXXX-XX" />
