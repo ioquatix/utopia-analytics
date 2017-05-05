@@ -40,9 +40,9 @@ use Utopia::Content,
 
 You might want to combine this tag with the `<environment>` tag to ensure that Google Analytics is only tracked in production. Simply set the `id` attribute to whatever you have been provided by Google Analytics:
 
-	<environment only="production">
+	<utopia:environment only="production">
 		<analytics:google id="UA-XXXXXXX-XX" />
-	</environment>
+	</utopia:environment>
 
 ## Contributing
 
