@@ -1,11 +1,9 @@
 # coding: utf-8
-lib = File.expand_path('../lib', __FILE__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'utopia/tags/google-analytics/version'
+require_relative 'lib/utopia/analytics/version'
 
 Gem::Specification.new do |spec|
-	spec.name          = "utopia-tags-google-analytics"
-	spec.version       = Utopia::Tags::GoogleAnalytics::VERSION
+	spec.name          = "utopia-analytics"
+	spec.version       = Utopia::Analytics::VERSION
 	spec.authors       = ["Samuel Williams"]
 	spec.email         = ["samuel.williams@oriontransfer.co.nz"]
 	spec.description   = <<-EOF
@@ -24,8 +22,9 @@ Gem::Specification.new do |spec|
 	spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
 	spec.require_paths = ["lib"]
 	
-	spec.add_dependency "utopia", "~> 1.6"
+	spec.add_dependency "utopia", "~> 2.0"
 	
-	spec.add_development_dependency "bundler", "~> 1.3"
-	spec.add_development_dependency "rake"
+	spec.add_development_dependency "bundler", "~> 1.4"
+	spec.add_development_dependency "rake", "~> 10.5"
+	spec.add_development_dependency "rspec", "~> 3.5"
 end

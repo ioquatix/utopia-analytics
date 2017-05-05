@@ -1,14 +1,18 @@
-# Utopia::Tags::GoogleAnalytics
+# Utopia::Analytics
 
-[Utopia](http://www.codeotaku.com/projects/utopia) is a website generation framework which provides a robust set of tools to build highly complex dynamic websites. It uses the filesystem heavily for content and provides frameworks for interacting with files and directories as structure representing the website.
+Provides a [Utopia] namespace for integrating with analytics services, currently including: Google Analytics.
 
-This package includes a useful `<google-analytics>` tag for easily integrating with Google Analytics.
+[![Build Status](https://secure.travis-ci.org/ioquatix/utopia-analytics.svg)](http://travis-ci.org/ioquatix/utopia-analytics)
+[![Code Climate](https://codeclimate.com/github/ioquatix/utopia-analytics.svg)](https://codeclimate.com/github/ioquatix/utopia-analytics)
+[![Coverage Status](https://coveralls.io/repos/ioquatix/utopia-analytics/badge.svg)](https://coveralls.io/r/ioquatix/utopia-analytics)
+
+[Utopia]: http://www.codeotaku.com/projects/utopia
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'utopia-tags-google-analytics'
+    gem 'utopia-analytics'
 
 And then execute:
 
@@ -16,22 +20,20 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install utopia-tags-google-analytics
+    $ gem install utopia-analytics
 
 ## Usage
 
-First make sure to add the `<google-analytics>` tag to `Utopia::Content` in your rackup file along with all the other tags you
-wish to use:
+First make sure to add the `<analytics:...>` namespace to `Utopia::Content` in your rackup file along with all the other tags you wish to use:
 
 ```ruby
-require 'utopia/tags/google-analytics'
-
+require 'utopia/analytics'
 ...
 
 use Utopia::Content,
-	tags: {
+	namespaces: {
 		...
-		'google-analytics' => Utopia::Tags::GoogleAnalytics,
+		'analytics' => Utopia::Analytics,
 		...
 	}
 ```
@@ -39,7 +41,7 @@ use Utopia::Content,
 You might want to combine this tag with the `<environment>` tag to ensure that Google Analytics is only tracked in production. Simply set the `id` attribute to whatever you have been provided by Google Analytics:
 
 	<environment only="production">
-		<google-analytics id="UA-XXXXXXX-XX" />
+		<analytics:google id="UA-XXXXXXX-XX" />
 	</environment>
 
 ## Contributing
@@ -54,7 +56,7 @@ You might want to combine this tag with the `<environment>` tag to ensure that G
 
 Released under the MIT license.
 
-Copyright, 2012, by [Samuel G. D. Williams](http://www.codeotaku.com/samuel-williams).
+Copyright, 2017, by [Samuel G. D. Williams](http://www.codeotaku.com/samuel-williams).
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
